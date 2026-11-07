@@ -1,14 +1,15 @@
 {
-  "name": "portfolio-website",
+  "name": "divyansh-trivedi-portfolio",
   "version": "1.0.0",
   "private": true,
-  "description": "Monochrome Editorial Developer & Designer Portfolio",
+  "description": "Divyansh Trivedi — AI Engineer, Generative AI & Agentic Systems Portfolio",
   "type": "module",
   "scripts": {
-    "dev": "python3 -m http.server 8080",
-    "start": "python3 -m http.server 8080"
+    "dev": "node server.js",
+    "start": "node server.js"
   },
   "dependencies": {
-    "@fiddle-digital/string-tune": "^1.2.0"
+    "@fiddle-digital/string-tune": "^1.2.0",
+    "sharp": "^0.35.5"
   }
 }

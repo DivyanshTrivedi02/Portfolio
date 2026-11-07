@@ -3,8 +3,24 @@
 <head>
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
-  <title>Jishnu Mondal — Monochrome Editorial Developer & Designer Portfolio</title>
-  <meta name="description" content="Portfolio of Jishnu Mondal, a talented freelance designer & developer specializing in UI/UX, Web Design, Landing Pages, Figma, and Webflow.">
+  <title>Divyansh Trivedi — AI Engineer | Generative AI &amp; Agentic Systems</title>
+  <meta name="description" content="Portfolio of Divyansh Trivedi, an AI Engineer specializing in Generative AI, LangGraph multi-agent systems, RAG pipelines, and intelligent cloud systems.">
+  <meta name="theme-color" content="#0D0D0D">
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
+
+  <!-- Open Graph & Social Sharing -->
+  <meta property="og:title" content="Divyansh Trivedi — AI Engineer | Generative AI &amp; Agentic Systems">
+  <meta property="og:description" content="Portfolio of Divyansh Trivedi, showcasing autonomous multi-agent swarms with LangGraph, RAG vector pipelines, and cloud-native AI architecture.">
+  <meta property="og:image" content="assets/hero_portrait.png">
+  <meta property="og:type" content="website">
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Divyansh Trivedi — AI Engineer">
+  <meta name="twitter:description" content="Autonomous multi-agent swarms with LangGraph, RAG pipelines, and cloud AI architecture.">
+  <meta name="twitter:image" content="assets/hero_portrait.png">
   
   <!-- Tailwind CSS v3 with Plugins -->
   <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
@@ -194,9 +210,129 @@
       transform: translateY(0);
       opacity: 1;
     }
+
+    /* ============================================================
+       CINEMATIC DEVELOPER FLEX INTRO
+       ============================================================ */
+    #cinematic-intro {
+      position: fixed;
+      inset: 0;
+      z-index: 99999;
+      background-color: #050507;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+      user-select: none;
+      -webkit-user-select: none;
+      cursor: pointer;
+    }
+
+    #intro-starfield-canvas {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      pointer-events: none;
+    }
+
+    .intro-spotlight {
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(circle at center, rgba(255, 255, 255, 0.09) 0%, rgba(255, 255, 255, 0.02) 40%, transparent 70%);
+      pointer-events: none;
+    }
+
+    .intro-exclamation-glow {
+      filter: drop-shadow(0 0 25px rgba(255, 255, 255, 0.85)) drop-shadow(0 0 60px rgba(255, 255, 255, 0.45));
+    }
+
+    .cinematic-metallic-title {
+      font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+      font-weight: 900;
+      font-size: clamp(3.2rem, 11vw, 9.5rem);
+      letter-spacing: -0.035em;
+      line-height: 0.95;
+      text-transform: uppercase;
+      background: linear-gradient(180deg, #FFFFFF 0%, #D8DCE8 38%, #8E94A8 68%, #4A4E60 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      filter: drop-shadow(0 0 30px rgba(255, 255, 255, 0.25)) drop-shadow(0 20px 40px rgba(0, 0, 0, 0.85));
+      display: inline-block;
+      white-space: nowrap;
+    }
+
+    .cinematic-sheen {
+      position: relative;
+    }
+
+    .cinematic-sheen::after {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: -100%;
+      width: 60%;
+      height: 100%;
+      background: linear-gradient(90deg, transparent 0%, rgba(255, 255, 255, 0.45) 50%, transparent 100%);
+      transform: skewX(-25deg);
+      animation: cinematicSheenSweep 1.8s ease-in-out infinite;
+      pointer-events: none;
+    }
+
+    @keyframes cinematicSheenSweep {
+      0% { left: -100%; }
+      100% { left: 200%; }
+    }
+
+    .cinematic-subtitle-text {
+      font-family: 'Plus Jakarta Sans', system-ui, sans-serif;
+      font-size: clamp(0.85rem, 1.8vw, 1.35rem);
+      font-weight: 700;
+      letter-spacing: 0.35em;
+      text-transform: uppercase;
+      color: rgba(230, 235, 245, 0.9);
+      text-shadow: 0 0 25px rgba(255, 255, 255, 0.45);
+    }
   </style>
 </head>
 <body class="antialiased text-[#111] bg-[#FAFAFA]">
+
+  <!-- CINEMATIC INTRO OVERLAY (Matches Developer Flex Sequence) -->
+  <div id="cinematic-intro" aria-label="Intro Animation" title="Click anywhere or press ESC to skip">
+    <!-- Background Starfield Particle Canvas -->
+    <canvas id="intro-starfield-canvas"></canvas>
+
+    <!-- Center Radial Atmospheric Spotlight Glow -->
+    <div class="intro-spotlight"></div>
+
+    <!-- Center Stage Container -->
+    <div class="relative z-10 flex flex-col items-center justify-center text-center px-4 w-full min-h-[220px]">
+      
+      <!-- Stage A: Pulsing / Tilting Exclamation Mark (!) -->
+      <div id="intro-exclamation-wrap" class="intro-exclamation-glow flex flex-col items-center justify-center opacity-0 scale-90 will-change-transform" style="transition: opacity 0.6s ease, transform 0.6s ease;">
+        <!-- Stem -->
+        <div id="intro-exclamation-stem" class="w-4 sm:w-5 h-20 sm:h-24 bg-gradient-to-b from-white via-neutral-100 to-neutral-400 rounded-full mb-3.5 will-change-transform shadow-2xl"></div>
+        <!-- Dot -->
+        <div id="intro-exclamation-dot" class="w-4 sm:w-5 h-4 sm:h-5 bg-white rounded-full shadow-2xl"></div>
+      </div>
+
+      <!-- Stage B: Text Morph Stage (DIVYANSH -> PORTFOLIO) -->
+      <div id="intro-text-stage" class="absolute flex flex-col items-center justify-center opacity-0 scale-95 will-change-transform pointer-events-none">
+        <h1 id="intro-main-word" class="cinematic-metallic-title select-none">
+          DIVYANSH
+        </h1>
+        <div id="intro-subtitle" class="cinematic-subtitle-text mt-3 sm:mt-5 opacity-0 transform translate-y-3 transition-all duration-700 select-none">
+          AI ENGINEER
+        </div>
+      </div>
+
+    </div>
+
+    <!-- Skip / Quick Dismiss Pill -->
+    <button id="intro-skip-btn" class="absolute top-6 right-8 text-[11px] font-mono tracking-widest text-neutral-400 hover:text-white px-4 py-1.5 rounded-full border border-white/10 hover:border-white/30 backdrop-blur-md bg-white/[0.04] transition-all z-20" aria-label="Skip Intro">
+      SKIP [ESC]
+    </button>
+  </div>
 
   <!-- Notification Toast Container -->
   <div id="toast-container" class="fixed bottom-6 right-6 z-50 flex flex-col gap-2 pointer-events-none"></div>
@@ -205,7 +341,7 @@
   <header class="relative z-40 bg-[#FAFAFA] transition-all duration-300 w-full pt-6 pb-4 px-6 md:px-14 max-w-[1400px] mx-auto flex items-center justify-between" data-purpose="site-navigation">
     <!-- Brand Wordmark -->
     <a class="group font-extrabold text-xl tracking-tight text-black flex items-center" href="#home">
-      <span>ECHO</span>
+      <span>DIVYANSH</span>
       <span class="inline-block w-2 h-2 bg-black rounded-full ml-1 transition-transform group-hover:scale-150 duration-200"></span>
     </a>
 
@@ -214,31 +350,36 @@
       <a id="nav-home" class="nav-link px-4 py-2 rounded-full border border-neutral-300 text-black hover:border-black transition whitespace-nowrap" href="#home">HOME</a>
       <a id="nav-about" class="nav-link px-4 py-2 rounded-full border border-transparent hover:border-neutral-200 hover:text-black transition whitespace-nowrap" href="#about">ABOUT ME</a>
       <a id="nav-experience" class="nav-link px-4 py-2 rounded-full border border-transparent hover:border-neutral-200 hover:text-black transition whitespace-nowrap" href="#experience">EXPERIENCE</a>
+      <a id="nav-skills" class="nav-link px-4 py-2 rounded-full border border-transparent hover:border-neutral-200 hover:text-black transition whitespace-nowrap" href="#skills-education">SKILLS &amp; CERTS</a>
       <a id="nav-projects" class="nav-link px-4 py-2 rounded-full border border-transparent hover:border-neutral-200 hover:text-black transition whitespace-nowrap" href="#projects">PROJECTS</a>
-      <a id="nav-landing-pages" class="nav-link px-4 py-2 rounded-full border border-transparent hover:border-neutral-200 hover:text-black transition whitespace-nowrap" href="#landing-pages">LANDING PAGES</a>
+      <a id="nav-systems" class="nav-link px-4 py-2 rounded-full border border-transparent hover:border-neutral-200 hover:text-black transition whitespace-nowrap" href="#landing-pages">SYSTEMS</a>
       <a id="nav-services" class="nav-link px-4 py-2 rounded-full border border-transparent hover:border-neutral-200 hover:text-black transition whitespace-nowrap" href="#services">SERVICES</a>
     </nav>
 
     <!-- Right Social & Menu Links -->
     <div class="flex items-center gap-1.5 md:gap-2 p-1.5 bg-white/95 border border-[#E2E2E2] rounded-full shadow-sm">
-      <!-- Instagram -->
-      <a class="w-8 h-8 rounded-full flex items-center justify-center hover:bg-neutral-100 transition text-neutral-700 hover:text-black" href="https://www.instagram.com/echo__builds/" target="_blank" rel="noopener" title="Instagram">
-        <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><rect height="18" rx="5" ry="5" width="18" x="3" y="3"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" x2="17.51" y1="6.5" y2="6.5"></line></svg>
-      </a>
-
-      <!-- Twitter / X -->
-      <a class="w-8 h-8 rounded-full flex items-center justify-center hover:bg-neutral-100 transition text-neutral-700 hover:text-black" href="https://x.com/Jishn8m" target="_blank" rel="noopener" title="Twitter">
-        <svg class="w-3.5 h-3.5" fill="currentColor" viewBox="0 0 24 24"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+      <!-- Resume Download -->
+      <a class="px-3 py-1.5 rounded-full hover:bg-neutral-100 transition text-[11px] font-bold text-neutral-800 tracking-wider flex items-center gap-1 border border-neutral-200" href="assets/Divyansh_Resume.pdf" target="_blank" rel="noopener" title="Download Resume">
+        <span>RESUME</span>
+        <svg class="w-3 h-3 text-neutral-600" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"></path></svg>
       </a>
 
       <!-- LinkedIn -->
-      <a class="w-8 h-8 rounded-full flex items-center justify-center hover:bg-neutral-100 transition text-neutral-700 hover:text-black" href="https://www.linkedin.com/in/jishnu-mondal/" target="_blank" rel="noopener" title="LinkedIn">
+      <a class="w-8 h-8 rounded-full flex items-center justify-center hover:bg-neutral-100 transition text-neutral-700 hover:text-black" href="https://www.linkedin.com/in/divyansh-trivedi-297268280/" target="_blank" rel="noopener" title="LinkedIn">
         <svg class="w-3.5 h-3.5" fill="currentColor" viewBox="0 0 24 24"><path d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.28 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93h2.75M6.88 8.56a1.68 1.68 0 0 0 1.68-1.68c0-.93-.75-1.69-1.68-1.69a1.69 1.69 0 0 0-1.69 1.69c0 .93.76 1.68 1.69 1.68m1.39 9.94v-8.37H5.5v8.37h2.77z"/></svg>
       </a>
 
       <!-- GitHub -->
-      <a class="w-8 h-8 rounded-full flex items-center justify-center hover:bg-neutral-100 transition text-neutral-700 hover:text-black" href="https://github.com/Jishnu09-siuu" target="_blank" rel="noopener" title="GitHub">
+      <a class="w-8 h-8 rounded-full flex items-center justify-center hover:bg-neutral-100 transition text-neutral-700 hover:text-black" href="https://github.com/DivyanshTrivedi02" target="_blank" rel="noopener" title="GitHub">
         <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path fill-rule="evenodd" clip-rule="evenodd" d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.53 1.032 1.53 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"/></svg>
+      </a>
+
+      <!-- Email -->
+      <a class="w-8 h-8 rounded-full flex items-center justify-center hover:bg-neutral-100 transition text-neutral-700 hover:text-black cursor-pointer" 
+         href="mailto:divtrivedi20@gmail.com" 
+         onclick="handleEmailClick(event)"
+         title="Email Divyansh (divtrivedi20@gmail.com)">
+        <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path></svg>
       </a>
 
       <!-- Mobile Hamburger Button -->
@@ -253,7 +394,7 @@
     <div id="mobile-drawer-content" class="w-4/5 max-w-sm bg-white h-full p-8 flex flex-col justify-between transform translate-x-full transition-transform duration-300 shadow-2xl">
       <div>
         <div class="flex items-center justify-between pb-6 border-b border-neutral-200">
-          <span class="font-extrabold text-lg tracking-tight">ECHO•</span>
+          <span class="font-extrabold text-lg tracking-tight">DIVYANSH•</span>
           <button onclick="toggleMobileMenu()" class="w-8 h-8 rounded-full border border-neutral-300 flex items-center justify-center text-neutral-700 hover:border-black">
             ✕
           </button>
@@ -262,15 +403,18 @@
           <a onclick="toggleMobileMenu()" href="#home" class="py-2 border-b border-neutral-100 hover:text-neutral-500">HOME</a>
           <a onclick="toggleMobileMenu()" href="#about" class="py-2 border-b border-neutral-100 hover:text-neutral-500">ABOUT ME</a>
           <a onclick="toggleMobileMenu()" href="#experience" class="py-2 border-b border-neutral-100 hover:text-neutral-500">EXPERIENCE</a>
+          <a onclick="toggleMobileMenu()" href="#skills-education" class="py-2 border-b border-neutral-100 hover:text-neutral-500">SKILLS &amp; CERTS</a>
           <a onclick="toggleMobileMenu()" href="#projects" class="py-2 border-b border-neutral-100 hover:text-neutral-500">PROJECTS</a>
-          <a onclick="toggleMobileMenu()" href="#landing-pages" class="py-2 border-b border-neutral-100 hover:text-neutral-500">LANDING PAGES</a>
+          <a onclick="toggleMobileMenu()" href="#landing-pages" class="py-2 border-b border-neutral-100 hover:text-neutral-500">SYSTEMS</a>
           <a onclick="toggleMobileMenu()" href="#services" class="py-2 border-b border-neutral-100 hover:text-neutral-500">SERVICES</a>
           <a onclick="toggleMobileMenu(); openContactModal();" href="javascript:void(0)" class="py-2 text-black hover:underline">CONTACT</a>
+          <a href="assets/Divyansh_Resume.pdf" target="_blank" class="py-2 text-neutral-600 hover:text-black">DOWNLOAD RESUME ↗</a>
         </nav>
       </div>
       <div class="pt-6 border-t border-neutral-200">
-        <p class="text-xs uppercase tracking-widest text-neutral-400 mb-3">JISHNU MONDAL</p>
-        <p class="text-xs text-neutral-600">Freelance Designer & Developer</p>
+        <p class="text-xs uppercase tracking-widest text-neutral-400 mb-2">DIVYANSH TRIVEDI</p>
+        <p class="text-xs text-neutral-600">AI Engineer | Generative AI | Agentic Systems</p>
+        <p class="text-[11px] text-neutral-400 font-mono mt-1">+91-9555448088</p>
       </div>
     </div>
   </div>
@@ -295,7 +439,7 @@
       
       <!-- Left Column: Designer info & Arrow -->
       <div class="md:col-span-3 flex flex-col items-start md:items-start pl-2 md:pl-6 order-2 md:order-1 pt-6 md:pt-0">
-        <span class="text-xs font-bold tracking-wider uppercase text-neutral-800 mb-6">DESIGNER EST.2000</span>
+        <span class="text-xs font-bold tracking-wider uppercase text-neutral-800 mb-6">AI ENGINEER</span>
         <a class="circle-btn w-14 h-14 md:w-16 md:h-16 border-neutral-300" href="#about" aria-label="Scroll to About Section">
           <svg class="w-5 h-5 text-neutral-800 transform rotate-45" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24">
             <path d="M14 5l7 7m0 0l-7 7m7-7H3" stroke-linecap="round" stroke-linejoin="round"></path>
@@ -307,9 +451,9 @@
       <div class="md:col-span-6 flex justify-center order-1 md:order-2 relative z-10 -mt-16 md:-mt-36">
         <div class="relative w-[320px] h-[400px] md:w-[480px] md:h-[580px] flex items-end justify-center hero-portrait-mask">
           <img src="assets/hero_portrait.png" 
-               alt="Jishnu Mondal — Developer & Designer" 
+               alt="Divyansh Trivedi — AI Engineer | Generative AI &amp; Agentic Systems" 
                class="w-full h-full object-contain object-bottom pointer-events-none select-none transition-transform duration-700 hover:scale-[1.02]"
-               onerror="this.src='https://lh3.googleusercontent.com/aida-public/AB6AXuCcazn9gQbymIOQnywium-Vsjyj8kV2UoFlH63M0RX3nV0Z_2LZD-rugA9K0ORrfrFxJEkOBrlAyB0HWB8cm7KhZp-5sNgQuhXyGzJ9WmwvjEDhYw_g3BAr4A9j5phGh8JE5Rka_2e_B_o51jY55CQt5wfTPsFDGRvU2gaHKRu4gOOZD_FnQOszLiRDTh3La-RZzzHeFwfFY3XPZ9ikMq55oZ_xP2A95rzfUQE8WkHuIogtKLU-9zuSV9QywgCsVw4Btw'">
+               onerror="this.src='assets/divyansh_portrait.jpg'">
         </div>
       </div>
 
@@ -317,19 +461,19 @@
       <div class="md:col-span-3 flex flex-col items-start md:items-end text-left order-3 pt-6 md:pt-0 pr-2 md:pr-6 space-y-10">
         <!-- Pitch Quote -->
         <p class="text-[11px] md:text-xs uppercase font-medium leading-relaxed tracking-wider text-neutral-700 max-w-[220px] text-left">
-          I AM PASSIONATE ABOUT CREATING WEBSITES THAT STAND OUT FROM THE CROWD.
+          BUILDING PRODUCTION-GRADE MULTI-AGENT SWARMS, RAG PIPELINES, AND INTELLIGENT AI SYSTEMS.
         </p>
 
         <!-- Service List with hover interaction -->
         <div class="flex flex-col space-y-3 text-[11px] md:text-xs font-semibold tracking-widest text-neutral-600 uppercase">
           <a href="#services" onclick="selectService(0)" class="hover:text-black hover:translate-x-1 md:hover:-translate-x-1 transition-all inline-flex items-center gap-1.5">
-            <span>UI/UX</span>
+            <span>AGENTIC AI</span>
           </a>
           <a href="#services" onclick="selectService(1)" class="hover:text-black hover:translate-x-1 md:hover:-translate-x-1 transition-all inline-flex items-center gap-1.5">
-            <span>WEB DESIGN</span>
+            <span>RAG PIPELINES</span>
           </a>
           <a href="#services" onclick="selectService(2)" class="hover:text-black hover:translate-x-1 md:hover:-translate-x-1 transition-all inline-flex items-center gap-1.5 font-bold text-black">
-            <span>LANDING PAGE</span>
+            <span>LANGGRAPH &amp; LLMS</span>
           </a>
         </div>
       </div>
@@ -341,17 +485,17 @@
   <!-- BEGIN: About Section (ScrollExpandMedia Component) -->
   <section class="relative w-full bg-[#0D0D0D] text-white" id="about" style="min-height: 200vh;">
     <div class="sticky top-0 w-full h-[100dvh] overflow-hidden flex flex-col items-center justify-start z-10">
-      <!-- Background Ambient with dynamic opacity: 1 - scrollProgress (Previous Starry Night Castle Background) -->
+      <!-- Background Ambient with dynamic opacity: 1 - scrollProgress -->
       <div id="sem-bg-img" class="absolute inset-0 z-0 h-full w-full pointer-events-none transition-opacity duration-150 ease-out" style="will-change: opacity; transform: translateZ(0);">
         <img
           src="assets/about_starry_castle_hq.jpg?v=10"
-          alt="Monochrome Starry Night Castle Background"
+          alt="Monochrome Architectural Ambience"
           class="w-full h-full object-cover object-center"
         />
         <div class="absolute inset-0 bg-black/25"></div>
       </div>
 
-      <!-- Centered Interactive Stage Container (Exact from React Component) -->
+      <!-- Centered Interactive Stage Container -->
       <div class="container mx-auto flex flex-col items-center justify-start relative z-10 w-full h-full">
         <div class="flex flex-col items-center justify-center w-full h-[100dvh] relative">
           
@@ -367,11 +511,11 @@
               <img
                 id="sem-media-img"
                 src="assets/about_floating_light_hq.png?v=14"
-                alt="Jishnu Mondal - Ascendance &amp; Digital Craft"
+                alt="Divyansh Trivedi - AI Engineer"
                 class="w-full h-full object-cover rounded-xl transition-none"
                 style="transform: scale(1.02) translateZ(0); transform-origin: center; backface-visibility: hidden;"
               />
-              <!-- Pre-blurred Layer for 120 FPS GPU-accelerated Unblur (fades out opacity smoothly on scroll) -->
+              <!-- Pre-blurred Layer for 120 FPS GPU-accelerated Unblur -->
               <img
                 id="sem-media-blur"
                 src="assets/about_floating_light_hq.png?v=14"
@@ -380,7 +524,7 @@
                 class="absolute inset-0 w-full h-full object-cover rounded-xl transition-none pointer-events-none"
                 style="filter: blur(18px); transform: scale(1.08) translateZ(0); transform-origin: center; opacity: 1; will-change: opacity; backface-visibility: hidden;"
               />
-              <!-- Subtle Gradient Overlay: protects top/bottom legibility while keeping the center 100% transparent -->
+              <!-- Subtle Gradient Overlay -->
               <div id="sem-media-overlay" class="absolute inset-0 bg-gradient-to-b from-black/75 via-transparent to-black/85 rounded-xl transition-opacity duration-150 pointer-events-none"></div>
 
               <!-- Minimal Aesthetic About Info - Perimeter Layout with Empty Center -->
@@ -391,14 +535,14 @@
                 <!-- Top Perimeter: Refined Monochrome Headline -->
                 <div class="flex flex-col sm:flex-row sm:items-baseline justify-between gap-2 border-b border-white/10 pb-3">
                   <h3 class="text-xs sm:text-sm md:text-base font-extrabold uppercase tracking-tight text-white max-w-xl">
-                    TURNING VISIONARY IDEAS INTO FAST, DISTINCTIVE DIGITAL EXPERIENCES
+                    TURNING COMPLEX LLM REASONING INTO PRACTICAL, HIGH-IMPACT AGENTIC SYSTEMS
                   </h3>
                   <span class="text-[10px] font-mono tracking-wider uppercase text-neutral-400 shrink-0">
-                    BASED IN INDIA &bull; WORLDWIDE
+                    BASED IN INDIA &bull; GHAZIABAD &bull; WORLDWIDE
                   </span>
                 </div>
 
-                <!-- Center Zone: COMPLETELY OPEN & EMPTY - 100% unobscured view of artwork -->
+                <!-- Center Zone: COMPLETELY OPEN & EMPTY -->
                 <div class="flex-1 pointer-events-none min-h-[140px] md:min-h-[200px]"></div>
 
                 <!-- Bottom Perimeter: Disciplines, About Summary & Monochrome CTAs -->
@@ -406,12 +550,12 @@
                   <!-- About Me Summary & Disciplines -->
                   <div class="max-w-xl space-y-2">
                     <div class="flex items-center gap-2.5">
-                      <span class="text-[10px] font-bold tracking-widest uppercase text-neutral-300">DISCIPLINE &amp; CRAFT</span>
+                      <span class="text-[10px] font-bold tracking-widest uppercase text-neutral-300">DISCIPLINE &amp; STACK</span>
                       <div class="h-px bg-white/15 w-6"></div>
-                      <span class="text-[10px] font-mono tracking-widest uppercase text-neutral-400">UI/UX &bull; WEB DESIGN &bull; WEBFLOW &bull; FIGMA</span>
+                      <span class="text-[10px] font-mono tracking-widest uppercase text-neutral-400">AGENTIC AI &bull; LANGGRAPH &bull; RAG &bull; AWS CLOUD</span>
                     </div>
                     <p class="text-xs sm:text-[12px] font-medium leading-relaxed tracking-wider uppercase text-neutral-300">
-                      I SPECIALIZE IN BUILDING BESPOKE DIGITAL PRODUCTS WHERE PURPOSEFUL EDITORIAL DESIGN MEETS ROBUST ENGINEERING. CREATING EXPERIENCES WITH INTENTIONAL MOTION, SYSTEMATIC RIGOR, AND MEASURABLE IMPACT.
+                      COMPUTER SCIENCE UNDERGRADUATE (2023–2027) &amp; AWS CERTIFIED CLOUD PRACTITIONER. SPECIALIZING IN MULTI-AGENT SWARMS WITH LANGGRAPH, RAG PIPELINES WITH CHROMADB, AND SCALABLE LLM SYSTEMS FOR PRACTICAL RESEARCH &amp; CONTENT INTELLIGENCE.
                     </p>
                   </div>
 
@@ -423,8 +567,11 @@
                         <path d="M14 5l7 7m0 0l-7 7m7-7H3" stroke-linecap="round" stroke-linejoin="round"></path>
                       </svg>
                     </a>
-                    <a href="#services" class="pointer-events-auto px-5 py-2.5 rounded-full border border-neutral-500 hover:border-white text-white text-xs font-bold tracking-wider uppercase transition-all duration-200">
-                      SERVICES
+                    <a href="assets/Divyansh_Resume.pdf" target="_blank" rel="noopener" class="pointer-events-auto px-5 py-2.5 rounded-full border border-neutral-500 hover:border-white text-white text-xs font-bold tracking-wider uppercase transition-all duration-200">
+                      RESUME PDF
+                    </a>
+                    <a href="#projects" class="pointer-events-auto px-5 py-2.5 rounded-full border border-neutral-500 hover:border-white text-white text-xs font-bold tracking-wider uppercase transition-all duration-200">
+                      PROJECTS
                     </a>
                   </div>
                 </div>
@@ -481,11 +628,11 @@
       <div class="absolute inset-0 flex flex-col justify-around pointer-events-none overflow-hidden opacity-[0.035]">
         <!-- Upper Ticker (Drifting Left) -->
         <div id="exp-ticker-top" class="whitespace-nowrap font-black uppercase text-[14vw] tracking-tighter will-change-transform leading-none">
-          CREATIVE TECHNOLOGIST &nbsp;&nbsp; FULL STACK ARCHITECTURE &nbsp;&nbsp; CREATIVE TECHNOLOGIST &nbsp;&nbsp; FULL STACK ARCHITECTURE &nbsp;&nbsp;
+          AI ENGINEER &nbsp;&nbsp; AI ENGINEER &nbsp;&nbsp; AI ENGINEER &nbsp;&nbsp; AI ENGINEER &nbsp;&nbsp; AI ENGINEER &nbsp;&nbsp; AI ENGINEER &nbsp;&nbsp; AI ENGINEER &nbsp;&nbsp; AI ENGINEER &nbsp;&nbsp; AI ENGINEER &nbsp;&nbsp; AI ENGINEER &nbsp;&nbsp;
         </div>
         <!-- Lower Ticker (Drifting Right) -->
-        <div id="exp-ticker-bottom" class="whitespace-nowrap font-black uppercase text-[14vw] tracking-tighter will-change-transform leading-none">
-          2023 &nbsp;&nbsp; SELF-DIRECTED LEARNING &nbsp;&nbsp; 2026 &nbsp;&nbsp; FREELANCE SYSTEMS &nbsp;&nbsp; 2023 &nbsp;&nbsp; SELF-DIRECTED LEARNING &nbsp;&nbsp;
+        <div id="exp-ticker-bottom" class="whitespace-nowrap font-black uppercase text-[14vw] tracking-tighter will-change-transform leading-none" style="margin-left: -50vw;">
+          AI ENGINEER &nbsp;&nbsp; AI ENGINEER &nbsp;&nbsp; AI ENGINEER &nbsp;&nbsp; AI ENGINEER &nbsp;&nbsp; AI ENGINEER &nbsp;&nbsp; AI ENGINEER &nbsp;&nbsp; AI ENGINEER &nbsp;&nbsp; AI ENGINEER &nbsp;&nbsp; AI ENGINEER &nbsp;&nbsp; AI ENGINEER &nbsp;&nbsp;
         </div>
       </div>
 
@@ -493,7 +640,7 @@
       <header class="relative z-30 w-full px-6 md:px-14 pt-6 pb-4 flex items-center justify-between border-b border-white/[0.08] backdrop-blur-md bg-[#070709]/80">
         <div class="flex items-center gap-4">
           <span id="exp-hud-phase" class="text-[11px] font-semibold tracking-widest uppercase text-neutral-400">
-            SELF-DIRECTED LEARNING
+            CS FOUNDATIONS &amp; ACADEMICS
           </span>
         </div>
 
@@ -516,62 +663,50 @@
           <div class="exp-panel flex-shrink-0 w-[95vw] md:w-[85vw] px-8 md:px-16 lg:px-24 flex flex-col justify-center">
             <div class="max-w-3xl">
               <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-white/15 bg-white/[0.04] text-[10px] font-semibold tracking-widest uppercase text-neutral-300 mb-6">
-                <span>FOUNDATION & JOURNEY</span>
+                <span>FOUNDATION &amp; JOURNEY</span>
               </div>
               <h2 class="text-5xl sm:text-7xl md:text-8xl lg:text-9xl font-black uppercase tracking-tight text-white leading-[0.88] mb-8">
                 WHERE<br>I'VE BEEN
               </h2>
               <p class="text-base sm:text-lg md:text-xl text-neutral-300 leading-relaxed max-w-xl font-normal">
-                My professional journey through different roles and environments.
+                B.Tech Computer Science student (2023–2027), AWS Certified Cloud Practitioner, and AI Engineer architecting autonomous multi-agent systems and RAG pipelines.
               </p>
             </div>
           </div>
 
           <!-- ================= CHAPTER 01: LEARNING (90vw - 190vw) ================= -->
           <div class="exp-panel relative flex-shrink-0 w-[105vw] md:w-[100vw] px-8 md:px-16 lg:px-24 flex flex-col justify-center">
-            <!-- Background Parallax Date Typography -->
-            <div
-              class="exp-date-bg absolute -top-8 right-12 md:right-28 text-[12vw] md:text-[14vw] font-black uppercase text-white/[0.04] tracking-tighter select-none pointer-events-none will-change-transform"
-              data-parallax-factor="0.15"
-            >
-              2023 — 2025
-            </div>
-
             <div class="relative z-10 max-w-4xl">
-              <!-- Eyebrow & Date -->
+              <!-- Eyebrow -->
               <div class="flex items-center gap-4 mb-4">
-                <span class="text-xs font-semibold tracking-widest uppercase text-neutral-400">
-                  2023 — 2025
-                </span>
-                <span class="h-[1px] w-12 bg-white/20"></span>
                 <span class="text-xs font-bold tracking-widest uppercase text-white">
-                  SELF-DIRECTED LEARNING
+                  FOUNDATIONS &amp; AI RESEARCH
                 </span>
               </div>
 
               <!-- Oversized Typographic Role Title -->
               <h3 class="text-4xl sm:text-6xl md:text-7xl lg:text-8xl font-black uppercase tracking-tight text-white leading-[0.92] mb-6">
-                CREATIVE<br>TECHNOLOGIST
+                CS CORE &amp;<br>AI RESEARCH
               </h3>
 
               <!-- Narrative Summary -->
               <p class="text-sm sm:text-base md:text-lg text-neutral-300 leading-relaxed max-w-2xl mb-8">
-                Intensive self-education period exploring web technologies, creative coding, and modern development practices.
+                Undergraduate in Computer Science (2023–2027). Completed AWS Certified Cloud Practitioner and intensive mastery of Python, LangChain, RAG pipelines, and vector databases.
               </p>
 
               <!-- Milestone Specifications (Hairline Grid) -->
               <div class="grid grid-cols-1 sm:grid-cols-3 gap-6 pt-6 border-t border-white/10 max-w-3xl mb-8">
                 <div>
-                  <div class="text-[10px] font-bold text-neutral-400 uppercase tracking-widest mb-1.5">MILESTONE 01</div>
-                  <div class="text-xs sm:text-sm text-neutral-200 font-medium leading-snug">Completed 500+ hours of hands-on development</div>
+                  <div class="text-[10px] font-bold text-neutral-400 uppercase tracking-widest mb-1.5">CREDENTIALS</div>
+                  <div class="text-xs sm:text-sm text-neutral-200 font-medium leading-snug">AWS Certified Cloud Practitioner &amp; Infosys Python (100h)</div>
                 </div>
                 <div>
-                  <div class="text-[10px] font-bold text-neutral-400 uppercase tracking-widest mb-1.5">MILESTONE 02</div>
-                  <div class="text-xs sm:text-sm text-neutral-200 font-medium leading-snug">Mastered React, Node.js, and TypeScript ecosystem</div>
+                  <div class="text-[10px] font-bold text-neutral-400 uppercase tracking-widest mb-1.5">LANGGRAPH RESEARCH</div>
+                  <div class="text-xs sm:text-sm text-neutral-200 font-medium leading-snug">Architected Quorum multi-agent assistant with Search, Reader, Writer &amp; Critic</div>
                 </div>
                 <div>
-                  <div class="text-[10px] font-bold text-neutral-400 uppercase tracking-widest mb-1.5">MILESTONE 03</div>
-                  <div class="text-xs sm:text-sm text-neutral-200 font-medium leading-snug">Built portfolio of 15+ production-ready projects</div>
+                  <div class="text-[10px] font-bold text-neutral-400 uppercase tracking-widest mb-1.5">MULTIMODAL RAG</div>
+                  <div class="text-xs sm:text-sm text-neutral-200 font-medium leading-snug">Built video intelligence pipeline with Whisper, Sarvam AI &amp; ChromaDB</div>
                 </div>
               </div>
             </div>
@@ -579,52 +714,40 @@
 
           <!-- ================= CHAPTER 02: FREELANCE (190vw - 290vw) ================= -->
           <div class="exp-panel relative flex-shrink-0 w-[105vw] md:w-[100vw] px-8 md:px-16 lg:px-24 flex flex-col justify-center">
-            <!-- Background Parallax Date Typography -->
-            <div
-              class="exp-date-bg absolute -top-8 right-12 md:right-28 text-[12vw] md:text-[14vw] font-black uppercase text-white/[0.04] tracking-tighter select-none pointer-events-none will-change-transform"
-              data-parallax-factor="0.15"
-            >
-              2026 — PRESENT
-            </div>
-
             <div class="relative z-10 max-w-4xl">
-              <!-- Eyebrow & Date -->
+              <!-- Eyebrow -->
               <div class="flex items-center gap-4 mb-4">
-                <span class="text-xs font-semibold tracking-widest uppercase text-neutral-400">
-                  2026 — PRESENT
-                </span>
-                <span class="h-[1px] w-12 bg-white/20"></span>
                 <span class="text-xs font-bold tracking-widest uppercase text-white">
-                  FREELANCE / INDEPENDENT
+                  AGENTIC SYSTEMS &amp; PRODUCTION AI
                 </span>
                 <span class="hidden sm:inline-flex items-center px-2.5 py-0.5 rounded-full border border-white/20 text-[10px] font-semibold uppercase text-neutral-300">
-                  COMMERCIAL
+                  ACTIVE
                 </span>
               </div>
 
               <!-- Oversized Typographic Role Title -->
               <h3 class="text-4xl sm:text-6xl md:text-7xl lg:text-8xl font-black uppercase tracking-tight text-white leading-[0.92] mb-6">
-                FULL STACK<br>DEVELOPER
+                AUTONOMOUS<br>SYSTEMS LEAD
               </h3>
 
               <!-- Narrative Summary -->
               <p class="text-sm sm:text-base md:text-lg text-neutral-300 leading-relaxed max-w-2xl mb-8">
-                Building premium web experiences for clients worldwide. Specializing in interactive frontends, scalable backends, and AI-powered applications.
+                Building practical AI solutions as an AI Engineer. Specializing in autonomous multi-agent coordination, automated reflection/critic loops, multilingual speech RAG, and containerized cloud deployment.
               </p>
 
               <!-- Milestone Specifications (Hairline Grid) -->
               <div class="grid grid-cols-1 sm:grid-cols-3 gap-6 pt-6 border-t border-white/10 max-w-3xl mb-8">
                 <div>
-                  <div class="text-[10px] font-bold text-neutral-400 uppercase tracking-widest mb-1.5">DELIVERY</div>
-                  <div class="text-xs sm:text-sm text-neutral-200 font-medium leading-snug">Delivered 20+ projects across diverse industries</div>
+                  <div class="text-[10px] font-bold text-neutral-400 uppercase tracking-widest mb-1.5">MULTI-AGENT SWARM</div>
+                  <div class="text-xs sm:text-sm text-neutral-200 font-medium leading-snug">Automated report research, quality scoring &amp; live session telemetry</div>
                 </div>
                 <div>
-                  <div class="text-[10px] font-bold text-neutral-400 uppercase tracking-widest mb-1.5">INFRASTRUCTURE</div>
-                  <div class="text-xs sm:text-sm text-neutral-200 font-medium leading-snug">Implemented CI/CD pipelines and cloud architecture</div>
+                  <div class="text-[10px] font-bold text-neutral-400 uppercase tracking-widest mb-1.5">CONTAINER &amp; CLOUD</div>
+                  <div class="text-xs sm:text-sm text-neutral-200 font-medium leading-snug">Dockerized deployment for Streamlit, Mistral AI &amp; ChromaDB vector index</div>
                 </div>
                 <div>
-                  <div class="text-[10px] font-bold text-neutral-400 uppercase tracking-widest mb-1.5">MOTION SYSTEM</div>
-                  <div class="text-xs sm:text-sm text-neutral-200 font-medium leading-snug">Created custom animation systems with GSAP and Three.js</div>
+                  <div class="text-[10px] font-bold text-neutral-400 uppercase tracking-widest mb-1.5">CONTINUOUS INNOVATION</div>
+                  <div class="text-xs sm:text-sm text-neutral-200 font-medium leading-snug">Active research in agentic workflows, memory systems &amp; autonomous evaluation</div>
                 </div>
               </div>
             </div>
@@ -642,14 +765,14 @@
             class="exp-jump-btn text-[11px] font-bold tracking-widest uppercase px-3 py-1 rounded-md border border-white/20 text-white bg-white/10 transition-all hover:bg-white/20"
             data-target-progress="0.30"
           >
-            LEARNING
+            FOUNDATIONS
           </button>
           <button
             type="button"
             class="exp-jump-btn text-[11px] font-bold tracking-widest uppercase px-3 py-1 rounded-md border border-white/5 text-neutral-500 hover:text-white transition-all hover:border-white/20"
             data-target-progress="0.75"
           >
-            FREELANCE
+            AGENTIC AI
           </button>
         </div>
       </footer>
@@ -657,13 +780,164 @@
   </section>
   <!-- END: Experience Section -->
 
+  <!-- BEGIN: Technical Skills & Certifications Section -->
+  <section class="max-w-[1400px] mx-auto px-6 md:px-14 py-20 border-t border-neutral-200" id="skills-education" data-purpose="skills-education-section">
+    <!-- Section Header -->
+    <div class="mb-14">
+      <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-neutral-300 bg-white text-[10px] font-bold tracking-widest uppercase text-neutral-600 mb-4">
+        <span>CORE COMPETENCIES &amp; CERTIFICATIONS</span>
+      </div>
+      <h2 class="text-3xl md:text-5xl font-black uppercase tracking-tight text-neutral-900">
+        TECHNICAL SKILLS &amp; CERTIFICATIONS
+      </h2>
+      <p class="text-xs md:text-sm text-neutral-500 font-medium max-w-2xl mt-3 uppercase tracking-wider">
+        Synthesizing solid computer science theory, cloud architecture, and production-grade agentic AI systems.
+      </p>
+    </div>
+
+    <!-- Grid of Skills and Education Cards -->
+    <div class="grid grid-cols-1 lg:grid-cols-12 gap-8">
+      
+      <!-- Left Column: Technical Skills Categories (7 Cols) -->
+      <div class="lg:col-span-7 flex flex-col space-y-5">
+        <!-- Programming Languages -->
+        <div class="p-6 rounded-3xl border border-neutral-200 bg-white shadow-sm hover:border-black transition-all">
+          <div class="flex items-center justify-between mb-4">
+            <span class="text-xs font-bold uppercase tracking-widest text-neutral-400">01 // PROGRAMMING LANGUAGES</span>
+            <span class="text-[10px] font-mono px-2.5 py-0.5 rounded-full bg-neutral-100 text-neutral-700 font-bold">CORE</span>
+          </div>
+          <div class="flex flex-wrap gap-2">
+            <span class="px-4 py-2 rounded-xl bg-neutral-900 text-white text-xs font-semibold">Python</span>
+            <span class="px-4 py-2 rounded-xl bg-neutral-100 border border-neutral-200 text-neutral-800 text-xs font-semibold">Java</span>
+            <span class="px-4 py-2 rounded-xl bg-neutral-100 border border-neutral-200 text-neutral-800 text-xs font-semibold">SQL</span>
+          </div>
+        </div>
+
+        <!-- AI & Generative AI -->
+        <div class="p-6 rounded-3xl border border-neutral-300 bg-neutral-900 text-white shadow-lg hover:border-neutral-500 transition-all">
+          <div class="flex items-center justify-between mb-4">
+            <span class="text-xs font-bold uppercase tracking-widest text-neutral-400">02 // AI &amp; GENERATIVE AI</span>
+            <span class="text-[10px] font-mono px-2.5 py-0.5 rounded-full bg-white/10 text-neutral-300 font-bold">SPECIALIZATION</span>
+          </div>
+          <div class="flex flex-wrap gap-2">
+            <span class="px-3.5 py-1.5 rounded-xl bg-white text-black text-xs font-bold">LangGraph</span>
+            <span class="px-3.5 py-1.5 rounded-xl bg-white text-black text-xs font-bold">LangChain</span>
+            <span class="px-3.5 py-1.5 rounded-xl bg-neutral-800 border border-neutral-700 text-neutral-200 text-xs font-medium">Multi-Agent Systems</span>
+            <span class="px-3.5 py-1.5 rounded-xl bg-neutral-800 border border-neutral-700 text-neutral-200 text-xs font-medium">RAG Pipelines</span>
+            <span class="px-3.5 py-1.5 rounded-xl bg-neutral-800 border border-neutral-700 text-neutral-200 text-xs font-medium">Agentic AI</span>
+            <span class="px-3.5 py-1.5 rounded-xl bg-neutral-800 border border-neutral-700 text-neutral-200 text-xs font-medium">LLMs</span>
+            <span class="px-3.5 py-1.5 rounded-xl bg-neutral-800 border border-neutral-700 text-neutral-200 text-xs font-medium">ChromaDB</span>
+            <span class="px-3.5 py-1.5 rounded-xl bg-neutral-800 border border-neutral-700 text-neutral-200 text-xs font-medium">Hugging Face</span>
+            <span class="px-3.5 py-1.5 rounded-xl bg-neutral-800 border border-neutral-700 text-neutral-200 text-xs font-medium">OpenAI API</span>
+            <span class="px-3.5 py-1.5 rounded-xl bg-neutral-800 border border-neutral-700 text-neutral-200 text-xs font-medium">Mistral AI</span>
+            <span class="px-3.5 py-1.5 rounded-xl bg-neutral-800 border border-neutral-700 text-neutral-200 text-xs font-medium">Whisper &amp; Sarvam AI</span>
+          </div>
+        </div>
+
+        <!-- Frameworks, Databases & Tools -->
+        <div class="p-6 rounded-3xl border border-neutral-200 bg-white shadow-sm hover:border-black transition-all">
+          <div class="flex items-center justify-between mb-4">
+            <span class="text-xs font-bold uppercase tracking-widest text-neutral-400">03 // FRAMEWORKS, TOOLS &amp; DATABASES</span>
+            <span class="text-[10px] font-mono px-2.5 py-0.5 rounded-full bg-neutral-100 text-neutral-700 font-bold">STACK</span>
+          </div>
+          <div class="flex flex-wrap gap-2">
+            <span class="px-3 py-1.5 rounded-xl bg-neutral-100 border border-neutral-200 text-neutral-800 text-xs font-medium">Streamlit</span>
+            <span class="px-3 py-1.5 rounded-xl bg-neutral-100 border border-neutral-200 text-neutral-800 text-xs font-medium">Docker</span>
+            <span class="px-3 py-1.5 rounded-xl bg-neutral-100 border border-neutral-200 text-neutral-800 text-xs font-medium">MySQL</span>
+            <span class="px-3 py-1.5 rounded-xl bg-neutral-100 border border-neutral-200 text-neutral-800 text-xs font-medium">NumPy</span>
+            <span class="px-3 py-1.5 rounded-xl bg-neutral-100 border border-neutral-200 text-neutral-800 text-xs font-medium">Pandas</span>
+            <span class="px-3 py-1.5 rounded-xl bg-neutral-100 border border-neutral-200 text-neutral-800 text-xs font-medium">Git &amp; GitHub</span>
+            <span class="px-3 py-1.5 rounded-xl bg-neutral-100 border border-neutral-200 text-neutral-800 text-xs font-medium">VS Code</span>
+          </div>
+        </div>
+
+        <!-- Core CS -->
+        <div class="p-6 rounded-3xl border border-neutral-200 bg-white shadow-sm hover:border-black transition-all">
+          <div class="flex items-center justify-between mb-4">
+            <span class="text-xs font-bold uppercase tracking-widest text-neutral-400">04 // COMPUTER SCIENCE FOUNDATIONS</span>
+            <span class="text-[10px] font-mono px-2.5 py-0.5 rounded-full bg-neutral-100 text-neutral-700 font-bold">THEORY</span>
+          </div>
+          <div class="flex flex-wrap gap-2">
+            <span class="px-3 py-1.5 rounded-xl bg-neutral-50 border border-neutral-200 text-neutral-800 text-xs font-medium">Data Structures &amp; Algorithms</span>
+            <span class="px-3 py-1.5 rounded-xl bg-neutral-50 border border-neutral-200 text-neutral-800 text-xs font-medium">Object-Oriented Programming (OOP)</span>
+            <span class="px-3 py-1.5 rounded-xl bg-neutral-50 border border-neutral-200 text-neutral-800 text-xs font-medium">Database Management Systems (DBMS)</span>
+            <span class="px-3 py-1.5 rounded-xl bg-neutral-50 border border-neutral-200 text-neutral-800 text-xs font-medium">Operating Systems</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Right Column: Certifications & Engineering Focus (5 Cols) -->
+      <div class="lg:col-span-5 flex flex-col space-y-5">
+        
+        <!-- Certifications Card -->
+        <div class="p-6 rounded-3xl border border-neutral-200 bg-white shadow-sm hover:border-black transition-all">
+          <div class="flex items-center justify-between mb-4">
+            <span class="text-[10px] font-bold uppercase tracking-widest text-neutral-400">CERTIFICATIONS</span>
+            <span class="text-[10px] font-mono text-neutral-400">VERIFIED</span>
+          </div>
+          <ul class="space-y-3">
+            <li class="flex items-start gap-3">
+              <span class="w-2 h-2 rounded-full bg-black mt-1.5 shrink-0"></span>
+              <div>
+                <p class="text-xs font-bold text-neutral-900">AWS Certified Cloud Practitioner</p>
+                <p class="text-[11px] text-neutral-500 font-mono">Amazon Web Services</p>
+              </div>
+            </li>
+            <li class="flex items-start gap-3">
+              <span class="w-2 h-2 rounded-full bg-black mt-1.5 shrink-0"></span>
+              <div>
+                <p class="text-xs font-bold text-neutral-900">Python Programming (100 Hours)</p>
+                <p class="text-[11px] text-neutral-500 font-mono">Infosys Springboard</p>
+              </div>
+            </li>
+            <li class="flex items-start gap-3">
+              <span class="w-2 h-2 rounded-full bg-black mt-1.5 shrink-0"></span>
+              <div>
+                <p class="text-xs font-bold text-neutral-900">MySQL Certification</p>
+                <p class="text-[11px] text-neutral-500 font-mono">HackerRank</p>
+              </div>
+            </li>
+            <li class="flex items-start gap-3">
+              <span class="w-2 h-2 rounded-full bg-black mt-1.5 shrink-0"></span>
+              <div>
+                <p class="text-xs font-bold text-neutral-900">Database Programming with SQL</p>
+                <p class="text-[11px] text-neutral-500 font-mono">Oracle Academy</p>
+              </div>
+            </li>
+          </ul>
+        </div>
+
+        <!-- Applied AI Focus -->
+        <div class="p-6 rounded-3xl border border-neutral-200 bg-neutral-50 shadow-sm">
+          <div class="flex items-center justify-between mb-2">
+            <span class="text-[10px] font-bold uppercase tracking-widest text-neutral-400">ENGINEERING FOCUS</span>
+            <span class="text-[10px] font-mono text-neutral-500">SYSTEMS</span>
+          </div>
+          <h4 class="text-sm font-bold text-neutral-900 uppercase">Agentic Workflows &amp; Applied AI</h4>
+          <p class="text-xs text-neutral-600 mt-1 leading-relaxed">
+            Hands-on focus in building practical AI solutions, autonomous multi-agent pipelines with LangGraph, and enterprise-grade contextual RAG systems.
+          </p>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+  <!-- END: Technical Skills & Certifications Section -->
+
   <!-- BEGIN: Featured Project Section -->
   <section class="max-w-[1400px] mx-auto px-6 md:px-14 py-16" data-purpose="featured-projects" id="projects">
     <!-- Header -->
     <div class="mb-8">
+      <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-neutral-300 bg-white text-[10px] font-bold tracking-widest uppercase text-neutral-600 mb-3">
+        <span>INTERACTIVE 3D CAROUSEL</span>
+      </div>
       <h2 class="text-3xl md:text-5xl font-black uppercase tracking-tight text-neutral-900">
-        FEATURED PROJECT
+        FEATURED PROJECTS
       </h2>
+      <p class="text-xs md:text-sm text-neutral-500 font-medium max-w-xl mt-2 uppercase tracking-wider">
+        LangGraph agentic research swarms, multimodal video RAG engines, and cloud microservices.
+      </p>
     </div>
 
     <!-- Dynamic Projects Content Area with FlexCarousel -->
@@ -675,14 +949,20 @@
   </section>
   <!-- END: Featured Project Section -->
 
-  <!-- BEGIN: Landing Pages Featured Projects (WorksWheel) Section -->
-  <section class="max-w-[1400px] mx-auto px-6 md:px-14 py-16" data-purpose="landing-pages-featured-projects" id="landing-pages">
+  <!-- BEGIN: Systems & Architectures (WorksWheel) Section -->
+  <section class="max-w-[1400px] mx-auto px-6 md:px-14 py-16" data-purpose="systems-featured-projects" id="landing-pages">
     <!-- Header with Title -->
     <div class="mb-8 flex flex-col md:flex-row md:items-end justify-between gap-4">
       <div>
+        <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-neutral-300 bg-white text-[10px] font-bold tracking-widest uppercase text-neutral-600 mb-3">
+          <span>SPATIAL DRUM REEL</span>
+        </div>
         <h2 class="text-3xl md:text-5xl font-black uppercase tracking-tight text-neutral-900">
-          LANDING PAGES
+          AGENTIC SYSTEMS
         </h2>
+        <p class="text-xs md:text-sm text-neutral-500 font-medium max-w-xl mt-2 uppercase tracking-wider">
+          Architectural deep dives into multi-agent protocols, business intelligence analytics, and cloud stacks.
+        </p>
       </div>
     </div>
 
@@ -693,79 +973,82 @@
       </div>
     </div>
   </section>
-  <!-- END: Landing Pages Featured Projects Section -->
+  <!-- END: Systems & Architectures Section -->
 
   <!-- BEGIN: Services Section -->
   <section class="max-w-[1400px] mx-auto px-6 md:px-14 py-20" data-purpose="services-section" id="services">
     <!-- Centered Header -->
     <div class="text-center max-w-2xl mx-auto mb-14">
+      <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-neutral-300 bg-white text-[10px] font-bold tracking-widest uppercase text-neutral-600 mb-4">
+        <span>CORE SPECIALIZATIONS</span>
+      </div>
       <h2 class="text-3xl md:text-5xl font-black uppercase tracking-tight text-neutral-900 mb-4">
-        THE SERVICES WE PROVIDE
+        AI ENGINEERING SERVICES
       </h2>
       <p class="text-xs md:text-xs uppercase font-medium leading-relaxed tracking-wider text-neutral-500">
-        CREATING VISUALLY APPEALING AND FUNCTIONAL WEBSITES TAILORED TO THE CLIENT'S NEEDS AND GOALS. PROVIDING A CONSISTENT USER EXPERIENCE ACROSS PLATFORMS.
+        BUILDING RELIABLE, SCALABLE, AND INTELLIGENT AI SYSTEMS ENGINEERED FOR REAL-WORLD ENTERPRISE WORKFLOWS AND DATA REASONING.
       </p>
     </div>
 
     <!-- Service Pill Rows Accordion -->
     <div class="max-w-4xl mx-auto flex flex-col space-y-3.5">
       
-      <!-- Item 1: UI/UX -->
+      <!-- Item 1: Multi-Agent Swarms -->
       <div id="service-0" onclick="toggleService(0)" class="accordion-item w-full flex flex-col px-6 py-4 rounded-3xl border border-neutral-300 bg-white hover:border-black transition-all cursor-pointer">
         <div class="flex items-center justify-between">
           <span class="item-badge w-8 h-8 rounded-full border border-neutral-300 flex items-center justify-center text-xs font-medium text-neutral-700">1</span>
-          <span class="item-title text-xs md:text-sm font-bold tracking-widest uppercase text-neutral-800">UI/UX</span>
+          <span class="item-title text-xs md:text-sm font-bold tracking-widest uppercase text-neutral-800">AGENTIC AI &amp; MULTI-AGENT SWARMS</span>
           <div class="item-icon w-8 h-8 rounded-full border border-neutral-300 flex items-center justify-center transition-transform">
             <svg class="w-3.5 h-3.5 text-neutral-700" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M19 9l-7 7-7-7" stroke-linecap="round" stroke-linejoin="round"></path></svg>
           </div>
         </div>
         <div class="accordion-content">
           <p class="text-xs text-neutral-500 leading-relaxed max-w-2xl mb-4">
-            User research, wireframing, interactive prototyping, and usability validation. Transforming complex workflows into effortless, delightful digital experiences.
+            Autonomous multi-agent orchestration using LangGraph and LangChain. Designing specialized agent swarms (Search, Reader, Writer, Critic), tool calling, and automated reflection feedback loops.
           </p>
           <div class="flex items-center justify-between border-t border-neutral-200 pt-3">
-            <span class="text-[11px] font-mono text-neutral-400">DELIVERABLES: USER FLOWS, WIREFRAMES, DESIGN TOKENS</span>
-            <button onclick="event.stopPropagation(); bookSpecificService('UI/UX Design');" class="text-xs font-bold underline hover:text-neutral-600">INQUIRE ↗</button>
+            <span class="text-[11px] font-mono text-neutral-400">DELIVERABLES: LANGGRAPH GRAPH ENGINE, TOOL APIS, CRITIC SCORING</span>
+            <button onclick="event.stopPropagation(); bookSpecificService('Agentic AI & Multi-Agent Swarms');" class="text-xs font-bold underline hover:text-neutral-600">INQUIRE ↗</button>
           </div>
         </div>
       </div>
 
-      <!-- Item 2: WEB DESIGN -->
+      <!-- Item 2: RAG & Vector Search -->
       <div id="service-1" onclick="toggleService(1)" class="accordion-item w-full flex flex-col px-6 py-4 rounded-3xl border border-neutral-300 bg-white hover:border-black transition-all cursor-pointer">
         <div class="flex items-center justify-between">
           <span class="item-badge w-8 h-8 rounded-full border border-neutral-300 flex items-center justify-center text-xs font-medium text-neutral-700">2</span>
-          <span class="item-title text-xs md:text-sm font-bold tracking-widest uppercase text-neutral-800">WEB DESIGN</span>
+          <span class="item-title text-xs md:text-sm font-bold tracking-widest uppercase text-neutral-800">RAG &amp; VECTOR SEARCH PIPELINES</span>
           <div class="item-icon w-8 h-8 rounded-full border border-neutral-300 flex items-center justify-center transition-transform">
             <svg class="w-3.5 h-3.5 text-neutral-700" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M19 9l-7 7-7-7" stroke-linecap="round" stroke-linejoin="round"></path></svg>
           </div>
         </div>
         <div class="accordion-content">
           <p class="text-xs text-neutral-500 leading-relaxed max-w-2xl mb-4">
-            Bespoke web aesthetics with flawless responsive layouts, typography hierarchy, high-contrast dark modes, and crisp interactive animations.
+            Contextual question-answering over multimedia documents, YouTube video transcripts, and proprietary knowledge bases using ChromaDB, Hugging Face embeddings, and OpenAI/Mistral LLMs.
           </p>
           <div class="flex items-center justify-between border-t border-neutral-200 pt-3">
-            <span class="text-[11px] font-mono text-neutral-400">DELIVERABLES: FULL RESPONSIVE WEB DESIGNS, FIGMA SYSTEM</span>
-            <button onclick="event.stopPropagation(); bookSpecificService('Web Design');" class="text-xs font-bold underline hover:text-neutral-600">INQUIRE ↗</button>
+            <span class="text-[11px] font-mono text-neutral-400">DELIVERABLES: CHROMADB INDEX, HYBRID RETRIEVAL, TRANSCRIPT PIPELINE</span>
+            <button onclick="event.stopPropagation(); bookSpecificService('RAG & Vector Search Pipelines');" class="text-xs font-bold underline hover:text-neutral-600">INQUIRE ↗</button>
           </div>
         </div>
       </div>
 
-      <!-- Item 3: LANDING PAGE DESIGN (Active by default) -->
+      <!-- Item 3: Full-Stack AI Apps (Active by default) -->
       <div id="service-2" onclick="toggleService(2)" class="accordion-item active w-full flex flex-col px-6 py-4 rounded-3xl bg-black text-white shadow-xl cursor-pointer transition-all transform scale-[1.01]">
         <div class="flex items-center justify-between">
           <span class="item-badge w-8 h-8 rounded-full border border-neutral-700 flex items-center justify-center text-xs font-medium text-neutral-300">3</span>
-          <span class="item-title text-xs md:text-sm font-bold tracking-widest uppercase text-white">LANDING PAGE DESIGN</span>
+          <span class="item-title text-xs md:text-sm font-bold tracking-widest uppercase text-white">FULL-STACK AI APPS &amp; CLOUD DEPLOYMENT</span>
           <div class="item-icon w-8 h-8 rounded-full border border-neutral-700 flex items-center justify-center transition-transform rotate-90">
             <svg class="w-3.5 h-3.5 text-white" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M9 5l7 7-7 7" stroke-linecap="round" stroke-linejoin="round"></path></svg>
           </div>
         </div>
         <div class="accordion-content">
           <p class="text-xs text-neutral-300 leading-relaxed max-w-2xl mb-4">
-            High-converting editorial landing pages tailored for startups, product launches, and personal brands. Engineered to capture attention and boost conversions.
+            Production-grade AI applications with interactive Streamlit interfaces, FastAPI/Python backend services, Docker containerization, and AWS cloud deployment.
           </p>
           <div class="flex items-center justify-between border-t border-neutral-800 pt-3">
-            <span class="text-[11px] font-mono text-neutral-400">DELIVERABLES: COPYWRITING STRUCTURE, CUSTOM 3D/GRAPHICS, WEBFLOW CODE</span>
-            <button onclick="event.stopPropagation(); bookSpecificService('Landing Page Design');" class="text-xs font-bold underline text-white hover:text-neutral-300">INQUIRE ↗</button>
+            <span class="text-[11px] font-mono text-neutral-400">DELIVERABLES: STREAMLIT DASHBOARD, DOCKERFILE, AWS CLOUD DEPLOYMENT</span>
+            <button onclick="event.stopPropagation(); bookSpecificService('Full-Stack AI Apps & Cloud Deployment');" class="text-xs font-bold underline text-white hover:text-neutral-300">INQUIRE ↗</button>
           </div>
         </div>
       </div>
@@ -787,17 +1070,24 @@
 
       <!-- Action Button Pills -->
       <div class="flex flex-wrap items-center justify-center gap-3.5 mt-8 mb-20">
-        <a class="px-6 py-2.5 rounded-full border border-neutral-700 hover:border-neutral-400 text-xs font-medium tracking-wider uppercase transition text-neutral-300 hover:text-white" href="https://www.instagram.com/echo__builds/" target="_blank" rel="noopener">
-          INSTAGRAM
+        <a class="px-6 py-2.5 rounded-full border border-neutral-700 hover:border-neutral-400 text-xs font-medium tracking-wider uppercase transition text-neutral-300 hover:text-white inline-flex items-center gap-2 cursor-pointer" 
+           href="mailto:divtrivedi20@gmail.com" 
+           onclick="handleEmailClick(event)"
+           title="Send email to divtrivedi20@gmail.com">
+          <svg class="w-3.5 h-3.5 text-neutral-400" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path></svg>
+          EMAIL ME
         </a>
-        <a class="px-6 py-2.5 rounded-full border border-neutral-700 hover:border-neutral-400 text-xs font-medium tracking-wider uppercase transition text-neutral-300 hover:text-white" href="https://x.com/Jishn8m" target="_blank" rel="noopener">
-          TWITTER
+        <a class="px-6 py-2.5 rounded-full border border-neutral-700 hover:border-neutral-400 text-xs font-medium tracking-wider uppercase transition text-neutral-300 hover:text-white" href="tel:+919555448088">
+          +91-9555448088
         </a>
-        <a class="px-6 py-2.5 rounded-full border border-neutral-700 hover:border-neutral-400 text-xs font-medium tracking-wider uppercase transition text-neutral-300 hover:text-white" href="https://www.linkedin.com/in/jishnu-mondal/" target="_blank" rel="noopener">
+        <a class="px-6 py-2.5 rounded-full border border-neutral-700 hover:border-neutral-400 text-xs font-medium tracking-wider uppercase transition text-neutral-300 hover:text-white" href="https://www.linkedin.com/in/divyansh-trivedi-297268280/" target="_blank" rel="noopener">
           LINKEDIN
         </a>
-        <a class="px-6 py-2.5 rounded-full border border-neutral-700 hover:border-neutral-400 text-xs font-medium tracking-wider uppercase transition text-neutral-300 hover:text-white" href="https://github.com/Jishnu09-siuu" target="_blank" rel="noopener">
+        <a class="px-6 py-2.5 rounded-full border border-neutral-700 hover:border-neutral-400 text-xs font-medium tracking-wider uppercase transition text-neutral-300 hover:text-white" href="https://github.com/DivyanshTrivedi02" target="_blank" rel="noopener">
           GITHUB
+        </a>
+        <a class="px-6 py-2.5 rounded-full border border-neutral-700 hover:border-neutral-400 text-xs font-medium tracking-wider uppercase transition text-neutral-300 hover:text-white" href="assets/Divyansh_Resume.pdf" target="_blank" rel="noopener">
+          RESUME PDF
         </a>
         <button onclick="openContactModal()" class="px-7 py-2.5 rounded-full bg-white text-black hover:bg-neutral-200 text-xs font-bold tracking-wider uppercase transition transform hover:scale-105">
           CONTACT ME
@@ -805,9 +1095,13 @@
       </div>
 
       <!-- Bottom Credits Bar -->
-      <div class="w-full pt-8 border-t border-neutral-900 flex flex-col md:flex-row items-center justify-between text-[10px] tracking-widest uppercase text-neutral-600 font-semibold gap-4">
-        <div>PORTFOLIO. ALL RIGHTS RESERVED</div>
-        <div>DESIGN BY JISHNU MONDAL</div>
+      <div class="w-full pt-8 border-t border-neutral-900 flex flex-col md:flex-row items-center justify-between text-[10px] tracking-widest uppercase text-neutral-500 font-semibold gap-4">
+        <div>DIVYANSH TRIVEDI &bull; ALL RIGHTS RESERVED</div>
+        <div class="flex flex-wrap items-center gap-3 text-neutral-400">
+          <span>AI ENGINEER &bull; AWS CERTIFIED CLOUD PRACTITIONER</span>
+          <span class="text-neutral-700">&bull;</span>
+          <a href="privacy.html" class="hover:text-white underline underline-offset-2 transition">PRIVACY POLICY</a>
+        </div>
       </div>
 
     </div>
@@ -833,8 +1127,8 @@
     <div id="contact-modal-card" class="bg-white rounded-3xl max-w-lg w-full p-6 md:p-8 shadow-2xl transform scale-95 transition-transform duration-300">
       <div class="flex justify-between items-center border-b border-neutral-200 pb-4 mb-6">
         <div>
-          <span class="text-[10px] font-bold tracking-widest uppercase text-neutral-400">START A CONVERSATION</span>
-          <h3 class="text-xl font-black uppercase text-neutral-900">LET'S BUILD SOMETHING</h3>
+          <span class="text-[10px] font-bold tracking-widest uppercase text-neutral-400">CONNECT &bull; COLLABORATE</span>
+          <h3 class="text-xl font-black uppercase text-neutral-900">LET'S BUILD PRACTICAL AI</h3>
         </div>
         <button onclick="closeContactModal()" class="w-8 h-8 rounded-full border border-neutral-300 flex items-center justify-center text-neutral-600 hover:border-black hover:text-black">✕</button>
       </div>
@@ -842,27 +1136,30 @@
       <form id="contact-form" onsubmit="submitContactForm(event)" class="space-y-4">
         <div>
           <label class="block text-xs font-bold uppercase tracking-wider text-neutral-700 mb-1">Your Name</label>
-          <input type="text" id="contact-name" required placeholder="John Doe" class="w-full px-4 py-2.5 rounded-xl border border-neutral-300 focus:outline-none focus:border-black text-sm">
+          <input type="text" id="contact-name" required placeholder="Dr. Jane Smith" class="w-full px-4 py-2.5 rounded-xl border border-neutral-300 focus:outline-none focus:border-black text-sm">
         </div>
         <div>
           <label class="block text-xs font-bold uppercase tracking-wider text-neutral-700 mb-1">Email Address</label>
-          <input type="email" id="contact-email" required placeholder="john@company.com" class="w-full px-4 py-2.5 rounded-xl border border-neutral-300 focus:outline-none focus:border-black text-sm">
+          <input type="email" id="contact-email" required placeholder="jane@company.ai" class="w-full px-4 py-2.5 rounded-xl border border-neutral-300 focus:outline-none focus:border-black text-sm">
         </div>
         <div>
-          <label class="block text-xs font-bold uppercase tracking-wider text-neutral-700 mb-1">Service Required</label>
+          <label class="block text-xs font-bold uppercase tracking-wider text-neutral-700 mb-1">Area of Interest</label>
           <select id="contact-service" class="w-full px-4 py-2.5 rounded-xl border border-neutral-300 focus:outline-none focus:border-black text-sm bg-white">
-            <option value="Landing Page Design">Landing Page Design</option>
-            <option value="UI/UX Design">UI/UX Design</option>
-            <option value="Web Design">Web Design</option>
-            <option value="Mobile App Design">Mobile App Design</option>
-            <option value="UI Design Figma">UI Design Figma</option>
-            <option value="Other">Other / Full Project</option>
+            <option value="Agentic AI &amp; Multi-Agent Swarms">Agentic AI &amp; Multi-Agent Swarms</option>
+            <option value="RAG &amp; Vector Search Pipelines">RAG &amp; Vector Search Pipelines</option>
+            <option value="Full-Stack AI Apps &amp; Cloud Deployment">Full-Stack AI Apps &amp; Cloud Deployment</option>
+            <option value="LLM Orchestration &amp; LangGraph">LLM Orchestration &amp; LangGraph</option>
+            <option value="AI Engineering Role / Internship">AI Engineering Role / Internship</option>
+            <option value="Other / Collaboration">Other / Collaboration</option>
           </select>
         </div>
         <div>
           <label class="block text-xs font-bold uppercase tracking-wider text-neutral-700 mb-1">Message</label>
-          <textarea id="contact-message" rows="3" required placeholder="Tell me about your project, goals, and timeline..." class="w-full px-4 py-2 rounded-xl border border-neutral-300 focus:outline-none focus:border-black text-sm"></textarea>
+          <textarea id="contact-message" rows="3" required placeholder="Share details about your AI initiative, role, or project..." class="w-full px-4 py-2 rounded-xl border border-neutral-300 focus:outline-none focus:border-black text-sm"></textarea>
         </div>
+        <p class="text-[11px] text-neutral-400 text-center">
+          Inquiries are private &amp; confidential. Read our <a href="privacy.html" target="_blank" class="underline hover:text-black">Privacy Policy</a>.
+        </p>
         <button type="submit" class="w-full py-3 bg-black text-white rounded-xl text-xs font-bold tracking-widest uppercase hover:bg-neutral-800 transition">
           SEND MESSAGE
         </button>
@@ -870,66 +1167,64 @@
     </div>
   </div>
 
-  <!-- MODAL: Cart Drawer / Modal -->
-  <div id="cart-modal" class="fixed inset-0 z-50 bg-black/75 backdrop-blur-md opacity-0 pointer-events-none transition-opacity duration-300 flex items-center justify-center p-4">
-    <div id="cart-modal-card" class="bg-white rounded-3xl max-w-md w-full p-6 md:p-8 shadow-2xl transform scale-95 transition-transform duration-300">
-      <div class="flex justify-between items-center border-b border-neutral-200 pb-4 mb-4">
-        <h3 class="text-lg font-black uppercase text-neutral-900">SHOPPING BAG</h3>
-        <button onclick="closeCartModal()" class="w-8 h-8 rounded-full border border-neutral-300 flex items-center justify-center text-neutral-600 hover:border-black hover:text-black">✕</button>
-      </div>
-      <div id="cart-items" class="py-4 space-y-3 min-h-[120px] max-h-[300px] overflow-y-auto">
-        <p class="text-xs text-neutral-400 text-center py-8">Your bag is empty.</p>
-      </div>
-      <div class="border-t border-neutral-200 pt-4 mt-2">
-        <div class="flex justify-between items-center font-bold text-sm mb-4">
-          <span>SUBTOTAL</span>
-          <span id="cart-total">$0.00</span>
-        </div>
-        <button onclick="checkoutCart()" class="w-full py-3 bg-black text-white rounded-xl text-xs font-bold tracking-widest uppercase hover:bg-neutral-800 transition">
-          PROCEED TO CHECKOUT
-        </button>
-      </div>
-    </div>
-  </div>
-
   <!-- JAVASCRIPT: Comprehensive Interactivity -->
   <script>
-    // Cart state
-    let cart = [];
-
     // Project data details
     const projectsData = {
-      solar: {
-        category: 'APP DESIGN',
-        title: 'SOLAR PANEL MOBILE APP',
-        description: 'An intelligent energy management application that allows users to monitor real-time photovoltaic output, battery reserve statuses, and grid export rates.',
-        deliverables: ['Real-time IoT Telemetry Interface', 'Dark Mode High-Contrast UI', 'Custom Interactive Solar Graphs', 'Battery Degradation Predictor'],
-        tools: ['Figma', 'React Native', 'Tailwind', 'SwiftUI'],
-        stats: '428.4 kWh daily monitoring capacity with 99.8% precision telemetry.'
+      quorum: {
+        category: 'AUTONOMOUS MULTI-AGENT SWARM',
+        title: 'QUORUM RESEARCH ASSISTANT',
+        description: 'A multi-agent research application built with LangGraph coordinating four specialized agents: Search, Reader, Writer, and Critic. Automates web research, source extraction, fact-checking, and report synthesis.',
+        deliverables: ['Stateful LangGraph 4-Agent Swarm', 'Tavily Search & Web Extraction', 'Critic Reflection & Quality Scorer', 'Streamlit UI with Markdown Export'],
+        tools: ['LangGraph', 'Mistral AI', 'Tavily API', 'Streamlit', 'Python', 'LangChain'],
+        stats: '4 specialized agents coordinating autonomous research with real-time factual verification.',
+        link: 'https://github.com/DivyanshTrivedi02/quorum-multi-agent-research'
       },
-      furniture: {
-        category: 'FURNITURE APP',
-        title: 'OUR GROUNDBREAKING FURNITURE',
-        description: 'A minimalist architectural furniture e-commerce experience designed for curated designer objects, featuring augmented reality preview and fluid one-tap checkout.',
-        deliverables: ['Editorial Product Showcase', 'Minimal Cart Flow', 'Haptic Interactions', 'AR Object Viewer'],
-        tools: ['Figma', 'Three.js', 'Next.js', 'Stripe'],
-        stats: 'Featured piece: Hand-carved Wood Chair ($140.00).'
+      video: {
+        category: 'MULTIMODAL VIDEO INTELLIGENCE',
+        title: 'AI VIDEO ASSISTANT & RAG',
+        description: 'An AI application that processes YouTube videos and audio files to generate transcripts, titles, and structured summaries, with a RAG pipeline for contextual transcript question answering.',
+        deliverables: ['YouTube Video & Audio Processing', 'Multilingual Speech-to-Text (EN/HI/Hinglish)', 'Contextual Transcript RAG Q&A', 'PDF/TXT Export System'],
+        tools: ['Python', 'LangChain', 'ChromaDB', 'Whisper', 'Mistral AI', 'Sarvam AI', 'Streamlit', 'Docker'],
+        stats: 'Integrated OpenAI Whisper and Sarvam AI for multilingual transcription with ChromaDB vector search.',
+        link: 'https://github.com/DivyanshTrivedi02/AI-Video-Assistant'
       },
-      atelier: {
-        category: 'WEB DESIGN',
-        title: 'ATELIER MONOCHROME STUDIO',
-        description: 'A bespoke editorial web portfolio for an international Scandinavian architecture practice. Built with subtle typography gradients, fluid scroll interactions, and monolithic layout grids.',
-        deliverables: ['Editorial Layout System', 'Custom Typography Styling', 'Full Responsive CMS', 'Scroll-linked Animations'],
-        tools: ['Figma', 'Webflow', 'GSAP', 'Barba.js'],
-        stats: 'Awarded Site of the Day for Editorial Excellence.'
+      knowledge: {
+        category: 'VECTOR STORE & RETRIEVAL',
+        title: 'AGENTIC KNOWLEDGE ENGINE',
+        description: 'A production-grade semantic search and RAG knowledge retrieval architecture utilizing ChromaDB, LangChain, and Hugging Face embeddings with sub-second contextual responses.',
+        deliverables: ['Vector Store Architecture', 'Hybrid Document Retrieval', 'Contextual Relevance Filtering'],
+        tools: ['ChromaDB', 'LangChain', 'Hugging Face', 'Python', 'NumPy', 'Pandas'],
+        stats: 'Sub-second semantic search across dense vector spaces.',
+        link: 'https://github.com/DivyanshTrivedi02'
       },
-      nexus: {
-        category: 'WEB APPLICATION',
-        title: 'NEXUS AI ANALYTICS PLATFORM',
-        description: 'A mission-critical observability and analytics console for distributed systems. Real-time telemetry, cluster health maps, and predictive query cost forecasting.',
-        deliverables: ['Real-time Stream Canvas', 'Data Visualization System', 'Keyboard-Driven Command Palette', 'Micro-interactions'],
-        tools: ['React', 'TypeScript', 'Tailwind', 'D3.js'],
-        stats: 'Processes over 1.2M queries per second at 12ms average latency.'
+      aws: {
+        category: 'CLOUD INFRASTRUCTURE',
+        title: 'AWS CLOUD PRACTITIONER ARCHITECTURE',
+        description: 'Containerized AI microservices, cloud deployments, and production LLM orchestration following AWS Well-Architected Framework best practices.',
+        deliverables: ['Containerized Architecture', 'Cloud Deployment Pipelines', 'Relational & Vector Data Layer'],
+        tools: ['AWS', 'Docker', 'Python', 'MySQL', 'REST APIs', 'Git'],
+        stats: 'AWS Certified Cloud Practitioner with Dockerized microservices.',
+        link: 'https://github.com/DivyanshTrivedi02'
+      },
+      critic: {
+        category: 'HALLUCINATION MITIGATION',
+        title: 'AUTONOMOUS CRITIC NODE',
+        description: 'An automated reflection and evaluation module that analyzes generated research reports for source citations, logical consistency, and assigns an objective quality score before delivery.',
+        deliverables: ['Critic Evaluation Node', 'Source Grounding Verification', 'Automated Scoring Metrics'],
+        tools: ['LangGraph', 'Mistral AI', 'LangChain', 'Python'],
+        stats: 'Automated hallucination mitigation with dynamic scoring.',
+        link: 'https://github.com/DivyanshTrivedi02/quorum-multi-agent-research'
+      },
+      shield: {
+        category: 'BUSINESS INTELLIGENCE & ANALYTICS',
+        title: 'SHIELD INSURANCE ANALYTICS',
+        description: 'An interactive 4-page Power BI dashboard built for Shield Insurance analyzing 6 months of business performance (₹989M Revenue & 27K+ Customers) across revenue growth, sales channels, and demographic settlement rates.',
+        deliverables: ['Executive General KPI View', 'Sales Channel Dynamics (Donut & Trend)', 'Demographic Settlement Analysis (Bar & Matrix)', 'Time-Intelligence DAX Measures (DRG, DCG, MoM)'],
+        tools: ['Power BI Desktop', 'DAX', 'Power Query', 'SQL', 'Power BI Service'],
+        stats: '₹989M Revenue Analyzed • 27K+ Customers • Live Interactive Power BI Service.',
+        link: 'https://github.com/DivyanshTrivedi02/Shield_Insurance_Analytics',
+        liveUrl: 'https://app.powerbi.com/view?r=eyJrIjoiNTU2NjMyZTgtMmUxOS00YmViLWI0YmItNGZiOTg3OTljMGQ0IiwidCI6ImM2ZTU0OWIzLTVmNDUtNDAzMi1hYWU5LWQ0MjQ0ZGM1YjJjNCJ9'
       }
     };
 
@@ -1068,14 +1363,27 @@
           </div>
         `;
       }
-      if (data.link) {
-        html += `
-          <div class="pt-2 flex justify-center items-center">
-            <a href="${data.link}" target="_blank" rel="noopener noreferrer" class="inline-flex items-center justify-center gap-2 px-8 py-3.5 rounded-full bg-black text-white text-xs font-bold uppercase tracking-wider hover:bg-neutral-800 transition-all shadow-md hover:shadow-xl hover:scale-105 active:scale-95">
-              Visit Live Website ↗
+      const projectUrl = data.link || data.href;
+      const liveUrl = data.liveUrl;
+      if ((projectUrl && projectUrl !== '#' && !projectUrl.startsWith('#')) || liveUrl) {
+        html += `<div class="pt-3 flex flex-wrap justify-center items-center gap-3">`;
+        if (liveUrl) {
+          html += `
+            <a href="${liveUrl}" target="_blank" rel="noopener noreferrer" class="inline-flex items-center justify-center gap-2 px-6 py-3 rounded-full bg-[#F2C811] text-black text-xs font-bold uppercase tracking-wider hover:bg-[#e0b80d] transition-all shadow-md hover:scale-105 active:scale-95">
+              Live Power BI Dashboard ↗
             </a>
-          </div>
-        `;
+          `;
+        }
+        if (projectUrl && projectUrl !== '#' && !projectUrl.startsWith('#')) {
+          const isGithub = projectUrl.includes('github.com');
+          const btnLabel = isGithub ? 'View Repository on GitHub ↗' : 'Explore Project ↗';
+          html += `
+            <a href="${projectUrl}" target="_blank" rel="noopener noreferrer" class="inline-flex items-center justify-center gap-2 px-6 py-3 rounded-full bg-black text-white text-xs font-bold uppercase tracking-wider hover:bg-neutral-800 transition-all shadow-md hover:scale-105 active:scale-95">
+              ${btnLabel}
+            </a>
+          `;
+        }
+        html += `</div>`;
       }
 
       document.getElementById('modal-project-body').innerHTML = html;
@@ -1137,113 +1445,64 @@
     function submitContactForm(e) {
       e.preventDefault();
       const name = document.getElementById('contact-name').value;
+      const userEmail = document.getElementById('contact-email').value;
       const service = document.getElementById('contact-service').value;
+      const message = document.getElementById('contact-message').value;
       closeContactModal();
-      showToast(`Thank you, ${name}! Your inquiry for "${service}" has been received.`);
+
+      const subject = encodeURIComponent(`Portfolio Inquiry from ${name} [${service}]`);
+      const body = encodeURIComponent(`Hello Divyansh,\n\nName: ${name}\nEmail: ${userEmail}\nService / Area: ${service}\n\nMessage:\n${message}\n`);
+      
+      const gmailUrl = `https://mail.google.com/mail/?view=cm&fs=1&to=divtrivedi20@gmail.com&su=${subject}&body=${body}`;
+      const win = window.open(gmailUrl, '_blank', 'noopener,noreferrer');
+      if (!win || win.closed || typeof win.closed === 'undefined') {
+        window.location.href = `mailto:divtrivedi20@gmail.com?subject=${subject}&body=${body}`;
+      }
+
+      showToast(`Thank you, ${name}! Draft prepared for divtrivedi20@gmail.com.`);
       document.getElementById('contact-form').reset();
     }
 
-    // Cart Handlers
-    function addToCart(title, price) {
-      cart.push({ title, price, id: Date.now() });
-      updateCartUI();
-      showToast(`Added ${title} ($${price.toFixed(2)}) to your bag.`);
-    }
+    // Bulletproof email handler for Web & Native Mail Clients
+    function handleEmailClick(e) {
+      if (e) e.preventDefault();
+      const email = 'divtrivedi20@gmail.com';
+      const subject = encodeURIComponent('Inquiry for Divyansh Trivedi — AI Engineer');
 
-    function updateCartUI() {
-      const badge = document.getElementById('cart-badge');
-      if (cart.length > 0) {
-        badge.innerText = cart.length;
-        badge.classList.remove('hidden');
+      // 1. Copy to clipboard reliably
+      if (navigator.clipboard && navigator.clipboard.writeText) {
+        navigator.clipboard.writeText(email).catch(() => {});
       } else {
-        badge.classList.add('hidden');
+        try {
+          const tempInput = document.createElement('input');
+          tempInput.value = email;
+          document.body.appendChild(tempInput);
+          tempInput.select();
+          document.execCommand('copy');
+          document.body.removeChild(tempInput);
+        } catch (err) {}
       }
 
-      const list = document.getElementById('cart-items');
-      const totalEl = document.getElementById('cart-total');
-      if (cart.length === 0) {
-        list.innerHTML = `<p class="text-xs text-neutral-400 text-center py-8">Your bag is empty.</p>`;
-        totalEl.innerText = '$0.00';
-      } else {
-        let total = 0;
-        list.innerHTML = cart.map((item, idx) => {
-          total += item.price;
-          return `
-            <div class="flex items-center justify-between p-3 bg-neutral-50 rounded-xl border border-neutral-200">
-              <div>
-                <p class="text-xs font-bold text-black uppercase">${item.title}</p>
-                <p class="text-xs text-neutral-500 font-mono">$${item.price.toFixed(2)}</p>
-              </div>
-              <button onclick="removeFromCart(${idx})" class="text-xs text-red-500 hover:underline">Remove</button>
-            </div>
-          `;
-        }).join('');
-        totalEl.innerText = `$${total.toFixed(2)}`;
-      }
-    }
+      // 2. Open Gmail compose directly in a new tab (guaranteed to work in any browser without requiring Windows Mail app)
+      const gmailUrl = `https://mail.google.com/mail/?view=cm&fs=1&to=${email}&su=${subject}`;
+      const win = window.open(gmailUrl, '_blank', 'noopener,noreferrer');
 
-    function removeFromCart(idx) {
-      cart.splice(idx, 1);
-      updateCartUI();
-    }
-
-    function openCartModal() {
-      updateCartUI();
-      const modal = document.getElementById('cart-modal');
-      const card = document.getElementById('cart-modal-card');
-      modal.classList.remove('opacity-0', 'pointer-events-none');
-      card.classList.remove('scale-95');
-      card.classList.add('scale-100');
-    }
-
-    function closeCartModal() {
-      const modal = document.getElementById('cart-modal');
-      const card = document.getElementById('cart-modal-card');
-      modal.classList.add('opacity-0', 'pointer-events-none');
-      card.classList.remove('scale-100');
-      card.classList.add('scale-95');
-    }
-
-    function checkoutCart() {
-      if (cart.length === 0) {
-        showToast('Your bag is currently empty.');
-        return;
-      }
-      closeCartModal();
-      showToast('Redirecting to secure checkout...');
+      // 3. Fallback: if popup is blocked or user prefers local desktop client
       setTimeout(() => {
-        cart = [];
-        updateCartUI();
-        showToast('Order confirmed! Thank you for supporting designer craftsmanship.');
-      }, 1000);
+        if (!win || win.closed || typeof win.closed === 'undefined') {
+          window.location.href = `mailto:${email}?subject=${subject}`;
+        }
+      }, 350);
+
+      // 4. Toast feedback
+      showToast('Opening Gmail (divtrivedi20@gmail.com copied to clipboard!)');
     }
 
     // Interactive micro-interactions
-    function toggleHeart(btn) {
-      if (btn.innerText === '♡') {
-        btn.innerText = '♥';
-        btn.classList.add('text-red-500');
-        btn.classList.remove('text-neutral-400');
-        showToast('Added Wood Chair to saved items.');
-      } else {
-        btn.innerText = '♡';
-        btn.classList.remove('text-red-500');
-        btn.classList.add('text-neutral-400');
-      }
-    }
-
-    function triggerSolarAction() {
-      const kwh = document.getElementById('solar-kwh');
-      if (kwh) {
-        kwh.innerText = (parseFloat(kwh.innerText) + 0.8).toFixed(1) + ' kWh';
-      }
-      showToast('Live solar telemetry synchronized (+0.8 kWh).');
-    }
-
     function copyContactEmail() {
-      const email = 'hello@example.com';
+      const email = 'divtrivedi20@gmail.com';
       navigator.clipboard?.writeText(email);
-      showToast('Copied email: hello@example.com');
+      showToast('Copied email: divtrivedi20@gmail.com');
     }
 
     function toggleMobileMenu() {
@@ -1288,7 +1547,9 @@
         'home': document.getElementById('nav-home'),
         'about': document.getElementById('nav-about'),
         'experience': document.getElementById('nav-experience'),
+        'skills-education': document.getElementById('nav-skills'),
         'projects': document.getElementById('nav-projects'),
+        'landing-pages': document.getElementById('nav-systems'),
         'services': document.getElementById('nav-services')
       };
 
@@ -1362,7 +1623,7 @@
       if (container) {
         const wheelInstance = initWorksWheel(container, {
           items: DEFAULT_WORKS,
-          label: "Works '26",
+          label: "AI Systems",
           action: "View",
           onSelect: (index, item) => {
             if (window.openProjectModal) {
@@ -1387,5 +1648,6 @@
   </script>
   <script type="module" src="./scroll-expand-media.js"></script>
   <script type="module" src="./experience-section.js"></script>
+  <script type="module" src="./cinematic-intro.js"></script>
 </body>
 </html>

@@ -136,11 +136,11 @@ export async function initExperienceSection() {
     // 5. Update HUD Phase Title
     if (hudPhase) {
       if (currentProgress < 0.30) {
-        hudPhase.textContent = "ORIGIN & FOUNDATIONS";
+        hudPhase.textContent = "CS FOUNDATIONS & ACADEMICS";
       } else if (currentProgress < 0.65) {
-        hudPhase.textContent = "SELF-DIRECTED LEARNING";
+        hudPhase.textContent = "AI RESEARCH & CLOUD CERTIFICATION";
       } else {
-        hudPhase.textContent = "FREELANCE / INDEPENDENT";
+        hudPhase.textContent = "AGENTIC SYSTEMS & PRODUCTION AI";
       }
     }
 

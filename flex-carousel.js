@@ -4,52 +4,71 @@ export const photo = (id) => `https://images.unsplash.com/${id}?w=1200&q=80&auto
 
 export const DEFAULT_ITEMS = [
   {
-    src: 'Project Images/Cafe Website.png',
-    alt: 'Cafe Website',
-    title: 'Cafe Website',
-    subtitle: 'Editorial Coffee House Experience',
-    description: 'A full-stack cafe management system with an admin portal for orders, menu, and reservations',
-    link: 'https://mochaandmiso.web.app/'
+    src: 'Project Images/Quorum Multi-Agent.png',
+    alt: 'Quorum Multi-Agent AI Research Assistant',
+    title: 'Quorum Research Assistant',
+    subtitle: 'Autonomous Multi-Agent Swarm',
+    description: 'A multi-agent research application built with LangGraph, Mistral AI, Tavily API, and Streamlit, coordinating Search, Reader, Writer, and Critic agents to automate web research, fact-checking, and report synthesis.',
+    link: 'https://github.com/DivyanshTrivedi02/quorum-multi-agent-research',
+    stats: 'LangGraph 4-Agent Swarm • Live Streamlit Status • Automated Factual Scoring',
+    tools: ['LangGraph', 'Mistral AI', 'Tavily API', 'Streamlit', 'Python', 'LangChain'],
+    deliverables: ['Multi-Agent Workflow Engine', 'Search & Reader Extraction', 'Critic Fact-Checking Loop', 'Markdown Report Export']
   },
   {
-    src: 'Project Images/Design Studio.png',
-    alt: 'Design Studio',
-    title: 'Design Studio',
-    subtitle: 'Creative Agency & Brand Identity',
-    description: 'A bold design studio website built to showcase creative services, brand identity, and digital experiences',
-    link: 'https://echo-design-studio-ex.vercel.app/'
+    src: 'Project Images/AI Video Assistant.png',
+    alt: 'AI Video Assistant & RAG Pipeline',
+    title: 'AI Video Assistant',
+    subtitle: 'Multimodal Video Intelligence & RAG',
+    description: 'An AI application that processes YouTube videos and audio files to generate transcripts, titles, and structured summaries, with a RAG pipeline using LangChain, ChromaDB, and Hugging Face Embeddings for contextual question answering.',
+    link: 'https://github.com/DivyanshTrivedi02/AI-Video-Assistant',
+    stats: 'ChromaDB Vector Store • OpenAI Whisper • Sarvam AI • Docker Deployment',
+    tools: ['Python', 'LangChain', 'ChromaDB', 'Whisper', 'Mistral AI', 'Sarvam AI', 'Streamlit', 'Docker'],
+    deliverables: ['YouTube Video & Audio Processing', 'Multilingual Speech-to-Text (EN/HI/Hinglish)', 'Contextual Transcript RAG Q&A', 'PDF/TXT Export System']
   },
   {
-    src: 'Project Images/Photographer Portfolio.png',
-    alt: 'Photographer Portfolio',
-    title: 'Photographer Portfolio',
-    subtitle: 'Editorial & Analog Photography',
-    description: 'An analog & editorial photography portfolio showcasing timeless visual stories',
-    link: 'https://julianvance.vercel.app/'
+    src: 'Project Images/Agentic Knowledge Engine.png',
+    alt: 'Agentic Vector Search & RAG',
+    title: 'Knowledge Engine & RAG',
+    subtitle: 'Dense Vector Retrieval & Semantic Search',
+    description: 'A production-grade semantic search and RAG knowledge retrieval architecture utilizing ChromaDB, LangChain, and Hugging Face embeddings with sub-second contextual responses.',
+    link: 'https://github.com/DivyanshTrivedi02',
+    stats: 'Sub-second Semantic Latency • Dynamic Document Chunking • Vector Space Indexing',
+    tools: ['ChromaDB', 'LangChain', 'Hugging Face', 'Python', 'NumPy', 'Pandas'],
+    deliverables: ['Vector Store Architecture', 'Hybrid Document Retrieval', 'Contextual Relevance Filtering']
   },
   {
-    src: 'Project Images/Portfolio Design.png',
-    alt: 'Portfolio Design',
-    title: 'Portfolio Design',
-    subtitle: 'Minimalist Creative Developer Portfolio',
-    description: 'A sleek, high-performance portfolio crafted with modern typography, fluid interactions, and curated creative work.',
-    link: 'https://echooo.web.app/'
+    src: 'Project Images/AWS Cloud Architecture.png',
+    alt: 'AWS Cloud Architecture',
+    title: 'AWS Cloud Architecture',
+    subtitle: 'Certified Cloud Practitioner Lab',
+    description: 'Containerized AI microservices, cloud deployments, and production LLM orchestration following AWS Well-Architected Framework best practices.',
+    link: 'https://github.com/DivyanshTrivedi02',
+    stats: 'AWS Certified Cloud Practitioner • Dockerized Containers • Secure Endpoints',
+    tools: ['AWS', 'Docker', 'Python', 'MySQL', 'REST APIs', 'Git'],
+    deliverables: ['Containerized Architecture', 'Cloud Deployment Pipelines', 'Relational & Vector Data Layer']
   },
   {
-    src: 'Project Images/Portfolio Website.png',
-    alt: 'Portfolio Website',
-    title: 'Portfolio Website',
-    subtitle: 'Personal Developer & Designer Portfolio',
-    description: 'A personal portfolio highlighting full-stack engineering, interactive UI components, and modern web craft.',
-    link: 'https://jishnumondal.vercel.app/'
+    src: 'Project Images/Autonomous Critic.png',
+    alt: 'Autonomous Critic & Report Scoring',
+    title: 'Autonomous Critic Agent',
+    subtitle: 'Hallucination Mitigation & Quality Scoring',
+    description: 'An automated reflection and evaluation module that analyzes generated research reports for source citations, logical consistency, and assigns an objective quality score before delivery.',
+    link: 'https://github.com/DivyanshTrivedi02/quorum-multi-agent-research',
+    stats: 'Automated Fact-Checking • Quality Scoring Engine • Multi-Agent Consensus',
+    tools: ['LangGraph', 'Mistral AI', 'LangChain', 'Python'],
+    deliverables: ['Critic Evaluation Node', 'Source Grounding Verification', 'Automated Scoring Metrics']
   },
   {
-    src: 'Project Images/Sen Cruzo-Client Portfolio.png',
-    alt: 'Sen Cruzo',
-    title: 'Sen Cruzo',
-    subtitle: 'Luxury Architectural & Client Portfolio',
-    description: 'A bespoke editorial portfolio designed for high-profile client presentation, featuring immersive layouts and architectural visual storytelling.',
-    link: 'https://sencruzo.web.app/'
+    src: 'Project Images/Shield Insurance Analytics.png',
+    alt: 'Shield Insurance Analytics Dashboard',
+    title: 'Shield Insurance Analytics',
+    subtitle: 'Interactive Power BI Business Intelligence',
+    description: 'An interactive 4-page Power BI dashboard built for Shield Insurance analyzing 6 months of business performance (₹989M Revenue & 27K+ Customers) with dynamic DAX time-intelligence benchmarks.',
+    link: 'https://github.com/DivyanshTrivedi02/Shield_Insurance_Analytics',
+    liveUrl: 'https://app.powerbi.com/view?r=eyJrIjoiNTU2NjMyZTgtMmUxOS00YmViLWI0YmItNGZiOTg3OTljMGQ0IiwidCI6ImM2ZTU0OWIzLTVmNDUtNDAzMi1hYWU5LWQ0MjQ0ZGM1YjJjNCJ9',
+    stats: '₹989M Revenue Analyzed • 27K+ Customers • DAX Time Intelligence • Delhi NCR Dominance',
+    tools: ['Power BI', 'DAX', 'Power Query', 'SQL', 'Data Modeling'],
+    deliverables: ['Executive General KPI View', 'Sales Channel Dynamics (Donut & Trend)', 'Demographic Settlement Analysis (Bar & Matrix)']
   }
 ];
 
