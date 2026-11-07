@@ -12,7 +12,7 @@
   </p>
 
   <p align="center">
-    Crafted by <strong><a href="https://github.com/DivyanshTrivedi02">Divyansh Trivedi</a></strong> — AI Engineer &amp; B.Tech Computer Science Undergraduate (2023–2027).
+    Crafted by <strong><a href="https://github.com/DivyanshTrivedi02">Divyansh Trivedi</a></strong> — AI Engineer &amp; AWS Certified Cloud Practitioner.
   </p>
 
 </div>
@@ -62,7 +62,7 @@ Engineered to showcase **Agentic AI**, **Multi-Agent Systems**, **RAG Pipelines*
 - **Frameworks & Libraries**: Streamlit, NumPy, Pandas
 - **Databases**: MySQL, ChromaDB
 - **Tools & DevOps**: Docker, Git, GitHub, VS Code
-- **Education**: B.Tech in Computer Science (2023–2027)
+- **Education**: B.Tech in Computer Science
 - **Certifications**: AWS Certified Cloud Practitioner, Python (100h Infosys Springboard), MySQL (HackerRank), Database Programming with SQL (Oracle Academy)
 
 ---
